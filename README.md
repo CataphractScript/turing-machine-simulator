@@ -33,6 +33,7 @@ Ideal for learning, testing TM algorithms, and visualizing step-by-step executio
 
 ## 📂 Project Structure
 
+```
 turing-machine-simulator/
 │
 ├── src/
@@ -53,7 +54,7 @@ turing-machine-simulator/
 ├── .gitignore
 ├── LICENSE
 └── README.md
-
+```
 
 **Design Notes:**
 
