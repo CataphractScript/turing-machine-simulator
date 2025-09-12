@@ -23,8 +23,8 @@ namespace TM
 
             var result = tm.Run();
 
-            Console.WriteLine("******************************");
-            Console.WriteLine("Final tape (trimmed): " + result.finalTape);
+            Console.WriteLine("********* Final tape *********");
+            Console.WriteLine(result.finalTape);
             Console.WriteLine("Halted: " + result.halted);
             Console.WriteLine("Accepted: " + result.accepted);
             Console.WriteLine("Final state: " + result.finalState);

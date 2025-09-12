@@ -112,8 +112,8 @@ Language : $L = \{a^n b^n : n \ge 1\}$
 Input tape: "aaaabbbb"
 
 ```
-******************************
-Final tape (trimmed): Tape contents: xxxxyyyy_
+********* Final tape *********
+Tape contents: xxxxyyyy_
 Head at: 7 (shown with ^ below)
 xxxxyyyy_
        ^
