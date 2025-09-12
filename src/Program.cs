@@ -29,7 +29,6 @@ namespace TM
             Console.WriteLine("Accepted: " + result.accepted);
             Console.WriteLine("Final state: " + result.finalState);
             Console.WriteLine("Steps: " + result.steps);
-            Console.WriteLine("Full tape with head:");
             Console.WriteLine("******************************");
 
         }
