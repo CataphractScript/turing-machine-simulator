@@ -3,12 +3,21 @@ using System.Text;
 
 namespace TM.Models
 {
+    /// <summary>
+    /// Represents the tape of a Turing machine, including tape cells, 
+    /// head position, and blank symbol management.
+    /// </summary>
     public class Tape
     {
         private Dictionary<int, char> cells;
+    
+        // Current position of the tape head.
         public int HeadPosition { get; private set; }
+
+        // Symbol used to represent an empty cell on the tape.
         public char BlankSymbol { get; }
 
+        // Initializes the tape with an input string and a blank symbol.
         public Tape(string input, char blank)
         {
             cells = new Dictionary<int, char>();
@@ -18,16 +27,20 @@ namespace TM.Models
             BlankSymbol = blank;
         }
 
+        // Reads the symbol at the current head position.
         public char Read() => cells.ContainsKey(HeadPosition) ? cells[HeadPosition] : BlankSymbol;
 
+        // Writes a symbol at the current head position.
         public void Write(char symbol) => cells[HeadPosition] = symbol;
 
+        // Moves the head left, right, or stays based on the given direction.
         public void MoveHead(MoveDirection move)
         {
             if (move == MoveDirection.Left) HeadPosition--;
             else if (move == MoveDirection.Right) HeadPosition++;
         }
 
+        // Returns a string showing the tape contents, head position, and blank symbol.
         public string GetTapeContents()
         {
             int min = int.MaxValue, max = int.MinValue;

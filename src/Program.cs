@@ -7,11 +7,15 @@ namespace TM
 {
     internal class Program
     {
+        /// <summary>
+        /// Entry point of the program. 
+        /// Initializes the Turing machine with predefined inputs and runs it.
+        /// </summary>
         static void Main(string[] args)
         {
             var tm = new TuringMachine();
 
-            // Load machine from Inputs (hard-coded)
+            // Load machine configuration from Inputs (hard-coded).
             tm.Initialize(
                 MachineInputs.StartState,
                 MachineInputs.States,

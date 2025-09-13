@@ -11,8 +11,11 @@ namespace TM.Services
         private HashSet<string> acceptStates;
         private string currentState;
         private char blankSymbol;
+
+        // The tape used by the Turing machine.
         public Tape Tape { get; private set; }
 
+        // Initializes the machine with states, transitions, and input tape.
         public void Initialize(string startState, List<string> allStates, List<string> acceptStatesList, char blank, List<Transition> transitionList, string inputTape)
         {
             currentState = startState;
@@ -26,6 +29,11 @@ namespace TM.Services
                 transitions[(t.CurrentState, t.ReadSymbol)] = t;
         }
 
+        /// <summary>
+        /// Runs the machine until it halts, reaches an accept state, or exceeds maxSteps.
+        /// </summary>
+        /// <param name="maxSteps">Maximum number of steps to execute.</param>
+        /// <returns>A tuple with final tape, state, halting status, acceptance, and step count.</returns>
         public (string finalTape, string finalState, bool halted, bool accepted, int steps) Run(int maxSteps = 10000)
         {
             int step = 0;
@@ -38,6 +46,9 @@ namespace TM.Services
             return (Tape.GetTapeContents(), currentState, step < maxSteps, acceptStates.Contains(currentState), step);
         }
 
+        /// <summary>
+        /// Executes a single step of the machine based on the current state and tape symbol.
+        /// </summary>
         private bool TryStep()
         {
             char read = Tape.Read();
